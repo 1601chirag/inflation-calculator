@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inflation Calculator | Calculate Future Value with Inflation</title>
+  <meta name="description" content="Free inflation calculator to estimate how inflation affects the value of money over time. Useful for students and beginners in India.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <h1>Inflation Calculator</h1>
+
+  <p>
+    This inflation calculator helps you understand how inflation reduces the value of money over time.
+    It shows what today’s amount will be worth in the future after considering inflation.
+  </p>
+
+  <p>
+    Inflation means the general increase in prices over time, which reduces the purchasing power of money.
+  </p>
+
+  <hr>
+
+  <!-- Calculator Section -->
+  <h2>Calculate Impact of Inflation</h2>
+
+  <label>Current Amount (₹)</label><br>
+  <input type="number" id="p" placeholder="Enter current amount"><br><br>
+
+  <label>Annual Inflation Rate (%)</label><br>
+  <input type="number" id="r" placeholder="Enter inflation rate"><br><br>
+
+  <label>Time Period (Years)</label><br>
+  <input type="number" id="t" placeholder="Enter number of years"><br><br>
+
+  <button onclick="calcInflation()">Calculate</button>
+
+  <p id="result"></p>
+
+  <hr>
+
+  <h2>How Inflation is Calculated</h2>
+
+  <p>
+    Inflation impact is calculated using the following formula:
+  </p>
+
+  <p>
+    <strong>
+      Future Value = Current Amount ÷ (1 + Inflation Rate / 100)<sup>Time</sup>
+    </strong>
+  </p>
+
+  <p>
+    This calculator uses the same formula to estimate the future purchasing value of money.
+  </p>
+
+  <h2>Example of Inflation Calculation</h2>
+
+  <p>
+    If you have ₹1,00,000 today and the inflation rate is 6% per year for 10 years,
+    the future value of that amount will be approximately ₹55,839.
+  </p>
+
+  <h2>Who Should Use This Inflation Calculator</h2>
+
+  <ul>
+    <li>People planning long-term financial goals</li>
+    <li>Students learning basic economics</li>
+    <li>Anyone understanding inflation impact</li>
+  </ul>
+
+  <!-- Calculator Logic -->
+  <script>
+    function calcInflation() {
+      var p = document.getElementById("p").value;
+      var r = document.getElementById("r").value / 100;
+      var t = document.getElementById("t").value;
+
+      var value = p / Math.pow(1 + r, t);
+
+      document.getElementById("result").innerHTML =
+        "Future Value after Inflation = ₹" + value.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>
